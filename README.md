@@ -37,6 +37,8 @@ services:
       - "80:80"
       - "443:443"
       - "443:443/udp"
+    environment:
+      INFOMANIAK_API_TOKEN: ${INFOMANIAK_API_TOKEN}
     volumes:
       - ./conf:/etc/caddy
       - ./site:/srv
@@ -46,4 +48,10 @@ services:
 volumes:
   caddy_data:
   caddy_config:
+```
+
+Put the token in a `.env` file next to `docker-compose.yml`:
+
+```
+INFOMANIAK_API_TOKEN=your-token-here
 ```
