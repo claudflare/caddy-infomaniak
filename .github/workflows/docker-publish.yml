@@ -4,8 +4,9 @@ on:
   push:
     branches: ['main']
     tags: ['v*']
-  schedule:
-    - cron: '0 6 * * *'
+    paths:
+      - 'Dockerfile'
+      - '.github/workflows/docker-publish.yml'
   workflow_dispatch:
 
 env:

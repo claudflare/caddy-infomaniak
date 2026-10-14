@@ -1,0 +1,10 @@
+version: 2
+updates:
+  # Open a PR when a new Caddy image is released; merging it rebuilds the image
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: daily
+    groups:
+      caddy:
+        patterns: ['caddy']
