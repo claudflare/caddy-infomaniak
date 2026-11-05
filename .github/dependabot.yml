@@ -5,6 +5,9 @@ updates:
     directory: /
     schedule:
       interval: daily
+    # Skip Dependabot's default 3-day cooldown for the official Caddy image
+    cooldown:
+      exclude: ['caddy']
     groups:
       caddy:
         patterns: ['caddy']
