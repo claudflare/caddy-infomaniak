@@ -1,4 +1,4 @@
-FROM caddy:2.11.8-builder AS builder
+FROM caddy:2.11.9-builder AS builder
 
 # build Caddy with latest Infomaniak DNS plugin
 RUN --mount=type=cache,target=/go/pkg/mod \
@@ -7,6 +7,6 @@ RUN --mount=type=cache,target=/go/pkg/mod \
       --with github.com/caddy-dns/infomaniak
 
 # final image
-FROM caddy:2.11.8
+FROM caddy:2.11.9
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
